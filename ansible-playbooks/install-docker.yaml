@@ -13,17 +13,14 @@
           - python3-setuptools
         state: latest
         update_cache: true
-
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
-
     - name: Add Docker Repository
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu jammy stable
         state: present
-
     - name: Update apt and install docker-ce and docker-compose
       apt:
         pkg:
@@ -31,12 +28,10 @@
           - docker-compose
         state: latest
         update_cache: true
-
     - name: Install Docker Module for Python
       pip:
         name: docker
-
-    - name: Add ubuntu user to docker group
+    - name: Add ubuntu user to Docker group
       user:
         name: ubuntu
         groups: docker
