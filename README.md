@@ -16,7 +16,7 @@ oci-terraform
      └── install-and-configure-firewalld.yaml
 ```
 ## Tasks to accomplish
-- The idea of this project is to create a `teamspeak` server in `OCI`.
+- The idea of this project is to create a `teamspeak` server in `OCI` using `docker`.
 
 ## How to setup this project locally
 - First we should download it with either `git clone` or as `.zip`.
@@ -26,7 +26,7 @@ oci-terraform
 ## Networking setup
 - First of all we have to add some `ingress rules` in our machine's `VCN`. Your will have to navigate to:
 ````
-Networking >> Virtual cloud networks >> <your_vcn> >> Security List Details >> Ingress Rules
+Networking >> Virtual cloud networks >> <Your_VCN>> Security List Details >> Ingress Rules
 ````
 - There you will have to allow the following ports: 
 ````
