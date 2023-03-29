@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    env_file: .env.mariadb.env
+    volumes:
+      - "/srv/teamspeak3/mariadb:/var/lib/mysql"
+
+  teamspeak3:
+    image: teamspeak
+    restart: always
+    env_file: .teamspeak3.env
+    environment:
+      - "TS3SERVER_DB_PLUGIN=ts3db_mariadb"
+      - "TS3SERVER_DB_SQLCREATEPATH=create_mariadb"
+      - "TS3SERVER_DB_HOST=mariadb"
+      - "TS3SERVER_DB_WAITUNTILREADY=30"
+      - "TS3SERVER_LICENSE=accept"
+    volumes:
+      - "/srv/teamspeak3/data:/var/ts3server/"
+    ports:
+      - '30033:30033'   
+      - '10011:10011'
+      - '9987:9987/udp' 
