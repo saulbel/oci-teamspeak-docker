@@ -37,7 +37,7 @@ Networking >> Virtual cloud networks >> <Your_VCN>> Security List Details >> Ing
 - Finally in our server we will have to open those ports. I will use `firewalld` which is a wrapper for `iptables`. You can either install it and configure it manually or you can use `install-and-configure-firewalld.yaml` playbook.
 
 ## Docker setup
-- Now we will copy our `docker-compose.yml` file to our server in `OCI`. Then we will create the containers:
+- Now we will copy our `docker-compose.yml` and `.env` files to our server in `OCI`. Then we will create the containers:
 ````
 $ docker-compose up -d
 Creating network "ubuntu_default" with the default driver
