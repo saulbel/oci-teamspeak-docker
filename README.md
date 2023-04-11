@@ -7,7 +7,7 @@ Things you need before starting:
 
 ## Project structure
 ```
-oci-terraform
+oci-teamspeak-docker
 |── docker-compose.yml
 |── .mariadb.env
 |── .teamspeak3.env
